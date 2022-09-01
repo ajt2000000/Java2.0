@@ -315,5 +315,182 @@ td{
     margin-left: 0;
     line-height: 0;
 }
+@charset "utf-8";
+
+ul{
+    list-style-type: none;
+}
+
+#header {
+	margin: 0;
+	width: 100%;
+	min-width: 1000px;
+	height: 40px;
+	background-color: #999999;
+	border-bottom: 4px solid #777777;
+}
+
+#logo{
+    margin: 0;
+    float: left;
+	height: 40px;
+}
+
+#header_menu {
+	margin: 0 auto;
+	width: 900px;
+}
+
+#header_menu ul {
+	width: 800px;
+	margin-left: 100px;
+}
+
+#header_menu p {
+    font-size: 12px;
+	font-weight: bold;
+    white-space: nowrap;
+}
+
+#header_menu li {
+	margin-right: 25px;
+	height: 40px;
+	float: left;
+	line-height: 40px;
+    min-width: 40px;
+    max-width: 200px;
+}
+
+#header_menu li a {
+	color: #333;
+	text-decoration: none;
+}
+
+#header_menu li a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+#footer {
+	width: 100%;
+	min-width: 1000px;
+	background-color: #888888;
+	border-top: 4px solid #666666;
+	font-size: 13px;
+	background-image: none;
+    clear: both;
+}
+
+#footer_main{
+	margin: 0 auto;
+	width: 900px;
+	padding: 20px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#footer_main p{
+	margin-bottom: 10px;
+}
+
+#footer_main a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#page_top {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+#page_top a {
+    background: #444;
+    text-decoration: none;
+	line-height: 30px;
+	font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    width: 50px;
+    padding: 10px 0;
+    text-align: center;
+    display: block;
+    border-radius: 50px;
+}
+
+#page_top a:hover {
+    text-decoration: none;
+    background: #222;
+}
 
 </style>
+<script>
+function header_f() {
+	var d0 = new Date(), d1 = new Date(2022, 9-1, 30);
+	var n=' <span style="font-size:11px;color: #333333">8/17</span> ';
+	if(d1.getTime()-d0.getTime()>0){ n+='<img src="https://sushida.net/img/new_w.gif" width="28" height="9" alt=""/>'; }
+    var html = "";
+	html += '<div id="logo"><a href="https://neutralx0.net/"><img src="https://sushida.net/img/logo.gif" width="120" height="40" alt=""/></a></div>';
+	html += '<div id="header_menu"><ul>';
+	html += '<li><p><a href="https://neutralx0.net" style=color:#333>HOME</a></p></li>';
+	html += '<li><p><a href="http://typingx0.net/">★タイピング</a></p></li>';
+	html += '<li><p><a href="https://neutralx0.net/room/">★脱出ゲーム</a></p></li>';
+	html += '<li><p><a href="https://neutralx0.net/mini/sakusaku/">★ミニゲーム</a></p></li>';
+	html += '<li><p><a href="https://neutralx0.net/tools/">★Webツール</a></p></li>';
+	html += '<li><p><a href="https://neutralx0.com/" target="_blank" class="topmenu">実験室</a></p></li>';
+	html += '<li><p><a href="https://www.youtube.com/channel/UCrT-1LHcrrM3uDw4jXZYCLA" target="_blank" class="topmenu">Youtube</a></p></li>';
+	html += '<li><p><a href="http://info.neutralx0.com/" target="_blank" class="topmenu">ヘルプ</a></p></li>';
+	html += '<li><p><a href="https://twitter.com/neutral_info" target="_blank" style="color:#333">更新'+n+'</a></p></li>';
+	html += '</ul></div>';
+    document.getElementById('header').innerHTML = html;
+}
+
+function footer_f(){
+	var html = '<div id="page_top"><a href="#top">&#9650;</a></div>';
+	html += '<div id="footer_main">';
+	html += '<p><a href="https://neutralx0.net/about.html" target="_blank">ご利用規約・プライバシーポリシー</a></p>';
+	html += '<p>&copy; 2005 Neutral.</p>';
+	html += '</div>';
+	document.getElementById('footer').innerHTML = html;
+}
+
+function sns_f(){
+    var html = '<ul>';
+    //tw
+    html +='<li><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a></li>';
+    //fb
+    var url=encodeURIComponent(location.href);
+	html +='<li><iframe src="https://www.facebook.com/plugins/like.php?href='+url+'&width=90&layout=button&action=like&size=small&share=false&height=65&appId" width="90" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></li>';
+	
+    //hatena
+    html +='<li><a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a></li>';
+    html += '</ul>';
+    document.getElementById('sns').innerHTML = html;
+    
+    var e = document.createElement("script");
+    e.src = "https://platform.twitter.com/widgets.js";
+    e.charset="utf-8";
+    document.body.appendChild(e);
+    
+    e = document.createElement("script");
+    e.src = "https://b.st-hatena.com/js/bookmark_button.js";
+    e.charset="utf-8";
+    e.async="async"
+    document.body.appendChild(e);
+}
+
+	
+	
+	
+	
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
