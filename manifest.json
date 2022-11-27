@@ -3,7 +3,7 @@
     "short_name": "PWA",
     "icons": [
         {
-            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd9s0FbVtooQ4dV8M6VNwYvUY5OkWW5YgCgw&usqp=CAU",
+            "src": "/img/icon.png",
             "sizes": "144x144",
             "type": "image/png"
         }
