@@ -3,12 +3,12 @@
     "short_name": "PWA",
     "icons": [
         {
-            "src": "/img/icon.png",
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd9s0FbVtooQ4dV8M6VNwYvUY5OkWW5YgCgw&usqp=CAU",
             "sizes": "144x144",
             "type": "image/png"
         }
     ],
-    "start_url": "/",
+    "start_url": "index.html",
     "display": "standalone",
     "theme_color": "#99d9ea"
 }
